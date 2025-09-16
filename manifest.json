@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Bulk close tabs",
+  "version": "1.0",
+  "description": "Bulk close tabs using substring matching.",
+  "permissions": ["tabs", "storage", "contextMenus"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "scripts/background.js"
+  },
+  "action": {
+    "default_icon": "icons/icon.svg"
+  }
+}
