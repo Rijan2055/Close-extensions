@@ -9,6 +9,6 @@
     "service_worker": "scripts/background.js"
   },
   "action": {
-    "default_icon": "icons/icon.svg"
+    "default_icon": "icons/icon.png"
   }
 }
