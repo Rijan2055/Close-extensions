@@ -19,6 +19,16 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
 });
 
 chrome.action.onClicked.addListener(async () => {
+  await closeTabsByDomains();
+});
+
+chrome.commands.onCommand.addListener(async (command) => {
+  if (command === "bulk-close-tabs") {
+    await closeTabsByDomains();
+  }
+});
+
+async function closeTabsByDomains() {
   chrome.storage.local.get(['domains'], async ({ domains }) => {
     const targetDomains = domains || [];
     const tabs = await chrome.tabs.query({});
@@ -37,4 +47,4 @@ chrome.action.onClicked.addListener(async () => {
       chrome.tabs.remove(tabsToClose);
     }
   });
-});
+}

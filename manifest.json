@@ -3,12 +3,21 @@
   "name": "Bulk close tabs",
   "version": "1.0",
   "description": "Bulk close tabs using substring matching.",
-  "permissions": ["tabs", "storage", "contextMenus"],
+  "permissions": ["tabs", "storage", "contextMenus", "commands"],
   "host_permissions": ["<all_urls>"],
   "background": {
     "service_worker": "scripts/background.js"
   },
   "action": {
     "default_icon": "icons/icon.png"
+  },
+  "commands": {
+    "bulk-close-tabs": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+X",
+        "mac": "Command+Shift+X"
+      },
+      "description": "Bulk close tabs matching stored domains (customizable in chrome://extensions/shortcuts)"
+    }
   }
 }
